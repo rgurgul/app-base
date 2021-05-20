@@ -1,12 +1,19 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CartComponent } from './cart/cart.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CartComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild([
+      { path: '', component: CartComponent }
+    ])
   ]
 })
 export class CartModule { }

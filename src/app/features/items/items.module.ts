@@ -1,12 +1,19 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ItemsComponent } from './items/items.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ItemsComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild([
+      { path: '', component: ItemsComponent }
+    ])
   ]
 })
 export class ItemsModule { }
