@@ -1,3 +1,4 @@
+import { MyLibModule, configToken } from 'my-lib';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,7 +14,11 @@ import { CartComponent } from './cart/cart.component';
     CommonModule,
     RouterModule.forChild([
       { path: '', component: CartComponent }
-    ])
+    ]),
+    MyLibModule
+  ],
+  providers:[
+    {provide: configToken, useValue: {color: 'black'}}
   ]
 })
 export class CartModule { }

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open --port=1234",
+    "start": "ng serve --open --port=1234 --proxy-config proxy.config.json",
     "build": "ng build --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -20,6 +20,8 @@
     "@angular/platform-browser": "~12.0.0",
     "@angular/platform-browser-dynamic": "~12.0.0",
     "@angular/router": "~12.0.0",
+    "idb": "^6.1.0",
+    "my-lib": "file:../my-workspace/dist/my-lib/my-lib-0.1.0.tgz",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"

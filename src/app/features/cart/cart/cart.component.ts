@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { CartItemModel } from './../../../utils/models';
+import { Observable } from 'rxjs';
+import { CartService } from './../services/cart.service';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  cart$!: Observable<CartItemModel[] | any>;
+
+  constructor(
+    private cartService: CartService
+  ) { }
 
   ngOnInit(): void {
+    this.cart$ = this.cartService.getState();
+  }
+
+  add(item: any) {
+    this.cartService.add(item);
   }
 
 }
