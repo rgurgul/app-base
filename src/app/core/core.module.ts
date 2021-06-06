@@ -1,9 +1,7 @@
+import { LayoutComponent } from './components/layout/layout.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MainComponent } from './components/main/main.component';
-import { MatMainComponent } from './components/mat-main/mat-main.component';
-import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -12,12 +10,10 @@ import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
-    MainComponent,
-    MatMainComponent
+    LayoutComponent
   ],
   imports: [
     CommonModule,
-    LayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
@@ -26,8 +22,7 @@ import { MatListModule } from '@angular/material/list';
     AppRoutingModule
   ],
   exports: [
-    MainComponent,
-    MatMainComponent
+    LayoutComponent
   ]
 })
 export class CoreModule { }
