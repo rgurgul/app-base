@@ -1,5 +1,5 @@
-import { Message } from './../../utils/models';
-import { Api } from './../../utils/api';
+import { Message } from '../../shared/models';
+import { Api } from '../../shared/api';
 import { Injectable } from '@angular/core';
 import { webSocket } from 'rxjs/webSocket';
 import { Subject, Observable } from 'rxjs';
