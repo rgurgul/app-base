@@ -84,8 +84,10 @@ export enum FieldTypes {
   button = "button",
 }
 
+export type ValidatorTypes = 'required' | 'minLength' | 'pattern' | 'email';
+
 export interface FieldValidator {
-  name: string;
+  name: ValidatorTypes;
   param?: string;
   message: string;
 }
