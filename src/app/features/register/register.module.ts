@@ -1,3 +1,4 @@
+import { MyLibModule } from 'my-lib';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,7 +14,8 @@ import { RegisterComponent } from './components/register/register.component';
     CommonModule,
     RouterModule.forChild([
       {path: '', component: RegisterComponent}
-    ])
+    ]),
+    MyLibModule
   ]
 })
 export class RegisterModule { }

@@ -15,4 +15,5 @@ export abstract class Store<T> {
   setState(nextState: T): void {
     this.state$.next(nextState);
   }
+
 }

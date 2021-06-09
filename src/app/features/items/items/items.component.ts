@@ -1,3 +1,5 @@
+import { ItemsService } from './../items.service';
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,11 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./items.component.scss']
 })
 export class ItemsComponent implements OnInit {
+  data$!: Observable<any>;
 
-  constructor() {
+  constructor(
+    private itemsService:ItemsService
+  ) {
+  }
+
+  buy(item: any) {
+    this.itemsService.addItem(item);
   }
 
   ngOnInit(): void {
+
+    this.data$ = this.itemsService.getState();
 
   }
 

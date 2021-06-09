@@ -1,1 +1,14 @@
 <p>cart works!</p>
+
+<lib-grid [data]="data$|async" [headers]="['title','count']">
+  <ng-template let-x>
+    <td>{{x.title}}</td>
+    <td>{{x.count}}</td>
+    <td>
+      <button (click)="add(x)">+</button>
+      <button (click)="remove(x)">-</button>
+    </td>
+  </ng-template>
+</lib-grid>
+
+

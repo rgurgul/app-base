@@ -1,3 +1,5 @@
+import { CartItemModel } from './../../../shared/models';
+import { CartService } from './../../../features/cart/cart.service';
 import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
@@ -15,7 +17,13 @@ export class LayoutComponent {
       map(result => result.matches),
       shareReplay()
     );
+  cartCount$: Observable<number>;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    public cartStore: CartService
+  ) {
+    this.cartCount$ = cartStore.getState().pipe(map((state: any[]) => state.length));
+  }
 
 }

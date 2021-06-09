@@ -1,2 +1,9 @@
 <p>game works!</p>
 
+<ng-template #playerTpl let-x>
+  <div class="el" [id]="x.username" [ngStyle]="{'left.px': x.clientX, 'top.px': x.clientY }">
+    {{x.username}}
+  </div>
+</ng-template>
+
+

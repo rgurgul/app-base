@@ -10,11 +10,11 @@ export interface HttpServiceModel {
 
 export interface HttpResponseModel {
   data: any[];
-  total: number;
-  message: string;
-  error: string;
-  accessToken: string;
-  refreshToken: string;
+  total?: number;
+  message?: string;
+  error?: string;
+  accessToken?: string;
+  refreshToken?: string;
 }
 export interface AuthServiceInterface {
   logged(): void;
